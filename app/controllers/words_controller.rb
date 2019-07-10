@@ -2,7 +2,7 @@ class WordsController < ApplicationController
 
   def create
     params.require(:words).each do |word|
-      anagram = Anagram.find_or_create_by(key: word.downcase.chars.sort.join)
+      anagram = Anagram.find_or_create_by(key: word.downcase.split(//).sort.join)
       anagram.words.create(spelling: word)
     end
     render status: :created
