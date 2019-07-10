@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :words
-  resources :anagrams
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :words, only: [:create]
+  delete '/words/:spelling', to: 'words#destroy'
+  delete '/words', to: 'words#destroy'
+  get '/anagrams/:spelling', to: 'anagrams#index'
 end

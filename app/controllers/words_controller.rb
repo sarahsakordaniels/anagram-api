@@ -1,51 +1,56 @@
 class WordsController < ApplicationController
-  before_action :set_word, only: [:show, :update, :destroy]
+  # adds a new word to the database and renders JSON of the added word
+   #
+   # @return [JSON]
+   def create
+     add_words
+     render status: 201
+   end
 
-  # GET /words
-  def index
-    @words = Word.all
+   # Removes a word(found by spelling params) from dictionary. It will no longer show up
+   # as an anagram for other words. If you try to delete a word that does not exist, a 404 renders.
+   # @return [status] shows the user a 204 status to confirm word was deleted.
+   def destroy
+     render status: status
+   end
 
-    render json: @words
-  end
+   private
 
-  # GET /words/1
-  def show
-    render json: @word
-  end
+   # Requires a user to pass in words as the key in their request
+   def word_params
+     params.require(:words)
+   end
 
-  # POST /words
-  def create
-    @word = Word.new(word_params)
+   # Takes the array of words passed in params and iterates through to create an
+   # anagram key if it doesn't exist yet, then add the word.
+   def add_words
+     word_params.each do |word|
+       anagram = Anagram.find_or_create_by(key: word.downcase.chars.sort.join)
+       anagram.words.create(spelling: word)
+     end
+   end
 
-    if @word.save
-      render json: @word, status: :created, location: @word
-    else
-      render json: @word.errors, status: :unprocessable_entity
-    end
-  end
+   # Checks if user is trying to delete a single word or ALL words, then destroys
+   def delete_words
+     if params[:spelling]
+       Word.destroy(word.id)
+     else
+       Word.delete_all
+     end
+   end
 
-  # PATCH/PUT /words/1
-  def update
-    if @word.update(word_params)
-      render json: @word
-    else
-      render json: @word.errors, status: :unprocessable_entity
-    end
-  end
+   # Finds the word object associated with the spelling passed in params
+   def word
+     Word.find_by(spelling: params[:spelling])
+   end
 
-  # DELETE /words/1
-  def destroy
-    @word.destroy
-  end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_word
-      @word = Word.find(params[:id])
-    end
-
-    # Only allow a trusted parameter "white list" through.
-    def word_params
-      params.fetch(:word, {})
-    end
-end
+   # Throws a 404 if user tries to delete a word that is not in the database
+   def status
+     if params[:spelling] && word.nil?
+       404
+     else
+       delete_words
+       204
+     end
+   end
+ end

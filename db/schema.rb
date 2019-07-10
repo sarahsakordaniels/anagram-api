@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 2019_07_09_234958) do
 
   create_table "words", force: :cascade do |t|
     t.string "spelling"
-    t.bigint "anagrams_id"
-    t.index ["anagrams_id"], name: "index_words_on_anagrams_id"
+    t.bigint "anagram_id"
+    t.index ["anagram_id"], name: "index_words_on_anagram_id"
   end
 
-  add_foreign_key "words", "anagrams", column: "anagrams_id"
+  add_foreign_key "words", "anagrams"
 end

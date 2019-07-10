@@ -1,51 +1,39 @@
 class AnagramsController < ApplicationController
-  before_action :set_anagram, only: [:show, :update, :destroy]
-
-  # GET /anagrams
+  #GET anagrams for given word
   def index
-    @anagrams = Anagram.all
-
-    render json: @anagrams
-  end
-
-  # GET /anagrams/1
-  def show
-    render json: @anagram
-  end
-
-  # POST /anagrams
-  def create
-    @anagram = Anagram.new(anagram_params)
-
-    if @anagram.save
-      render json: @anagram, status: :created, location: @anagram
-    else
-      render json: @anagram.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /anagrams/1
-  def update
-    if @anagram.update(anagram_params)
-      render json: @anagram
-    else
-      render json: @anagram.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /anagrams/1
-  def destroy
-    @anagram.destroy
+    render json: {"Anagrams": anagram_list}
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_anagram
-      @anagram = Anagram.find(params[:id])
+  # allows params of word and the limit on how many are returned
+  def anagram_params
+    params.permit(:spelling, :limit)
+  end
+  # finds the word passed in the params
+  def find_word
+    Word.find_by(spelling: params[:spelling])
+  end
+  # If word exists, it checks for a limit. If word does not exist, error is returned
+  def anagram_list
+    if word
+      limit?
+    else
+      ["That word does not exist in our database!"]
     end
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def anagram_params
-      params.fetch(:anagram, {})
+  # limits the number of results if the limit param is passed
+  def limit?
+    if params[:limit]
+      anagrams[0,params[:limit].to_i]
+    else
+      anagrams
     end
+  end
+  # Finds all words associated with the sorted key, and then removes the
+  # word itself because a word is not its own anagram by definition.
+  def anagrams
+    searched_word = word.anagram
+    searched_word.words.pluck(:spelling) - [word.spelling]
+  end
 end
