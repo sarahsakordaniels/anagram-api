@@ -1,0 +1,10 @@
+cat
+tac
+act
+read
+dear
+dare
+taco
+coat
+dog
+god
