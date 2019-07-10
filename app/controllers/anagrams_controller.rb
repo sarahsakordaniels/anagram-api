@@ -1,10 +1,11 @@
 class AnagramsController < ApplicationController
-  #GET anagrams for given word
+  
   def show
-    render json: {"anagrams": anagram_list}
+    render json: { "anagrams": anagram_list }
   end
 
   private
+
   def anagram_params
     params.permit(:spelling, :limit)
   end
@@ -15,7 +16,7 @@ class AnagramsController < ApplicationController
 
   def limit_anagrams?
     if params[:limit]
-      all_anagrams[0,params[:limit].to_i]
+      all_anagrams[0, params[:limit].to_i]
     else
       all_anagrams
     end
@@ -25,7 +26,7 @@ class AnagramsController < ApplicationController
     if word
       limit_anagrams?
     else
-      ["That word does not exist in our database!"]
+      ['That word does not exist in our database!']
     end
   end
 
