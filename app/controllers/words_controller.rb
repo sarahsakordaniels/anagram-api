@@ -13,7 +13,7 @@ class WordsController < ApplicationController
    end
 
    private
-   
+
    def word
      Word.find_by(spelling: params[:spelling])
    end
