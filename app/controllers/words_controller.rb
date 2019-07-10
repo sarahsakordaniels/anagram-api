@@ -3,9 +3,25 @@ class WordsController < ApplicationController
    #
    # @return [JSON]
    def create
-     add_words
+     params.require(:words).each do |word|
+       anagram = Anagram.find_or_create_by(key: word.downcase.chars.sort.join)
+       anagram.words.create(spelling: word)
+     end
      render status: 201
    end
+
+ #   def create
+ #   words = word_maker.new_words
+ #   if words.length > 0
+ #     words.each do |word|
+ #       word.save
+ #     end
+ #     render json: {message: "Success!"}, status: 201
+ #   else
+ #     render json: {error: "Try a different word"}, status: 400
+ #   end
+ # end
+
 
    # Removes a word(found by spelling params) from dictionary. It will no longer show up
    # as an anagram for other words. If you try to delete a word that does not exist, a 404 renders.
@@ -15,20 +31,6 @@ class WordsController < ApplicationController
    end
 
    private
-
-   # Requires a user to pass in words as the key in their request
-   def word_params
-     params.require(:words)
-   end
-
-   # Takes the array of words passed in params and iterates through to create an
-   # anagram key if it doesn't exist yet, then add the word.
-   def add_words
-     word_params.each do |word|
-       anagram = Anagram.find_or_create_by(key: word.downcase.chars.sort.join)
-       anagram.words.create(spelling: word)
-     end
-   end
 
    # Checks if user is trying to delete a single word or ALL words, then destroys
    def delete_words
