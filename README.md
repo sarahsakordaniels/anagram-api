@@ -7,7 +7,8 @@ To set this up in your local envinronment...
 
 1.	Run `bundle` to install any gems
 
-2. Run `rails db:create`, `rails db:migrate` and `rails db:seed`. Seeding the full dictionary file of over 200,000 words would take quite some time, so I've provided a condensed option in lib/short_dictionary.txt. Searchable words to explore the functionality of the API include "read", "taco", and "cat". If desired, the full 200,000+ word file is available under full_dictionary.txt.
+2. Run `rails db:create`, `rails db:migrate` and `rails db:seed`. Seeding the full dictionary file of over 200,000 words would take quite some time, so I've provided a condensed option in lib/short_dictionary.txt. Searchable words to explore the functionality of the API include "read", "taco", and "cat".
+  + If desired, the full 200,000+ word file is available under full_dictionary.txt. Just change "short_dictionary" in the seed.rb file to "full_dictionary"
 
 3. Run `rails s` to boot up the server on localhost:3000.
 
