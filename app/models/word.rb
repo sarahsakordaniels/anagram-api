@@ -13,8 +13,19 @@ class Word < ApplicationRecord
     }
   end
 
+  def self.most_anagrams
+    {
+      "words with the most anagrams": @words_with_most_anagrams
+    }
+  end
+
 private
+
+  #find most occurances of a given anagram_id
+  @anagram_id = Word.all.map(&:anagram_id).mode
+  @words_with_most_anagrams = Word.all.where(anagram_id: @anagram_id).pluck(:spelling)
   @words = Word.all.map(&:spelling)
+
   def self.word_lengths
     @words.map do |word|
       word.length

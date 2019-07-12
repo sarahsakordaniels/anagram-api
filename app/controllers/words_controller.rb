@@ -9,15 +9,19 @@ class WordsController < ApplicationController
     render status: :created
   end
 
-#DELETE a word
+  #DELETE a word
   def destroy
     does_word_exist?
   end
 
-#GET data on words
-def data
-  render json: Word.data
-end
+  #GET data on words
+  def data
+    render json: Word.data
+  end
+
+  def most_anagrams
+    render json: Word.most_anagrams
+  end
 
    private
 

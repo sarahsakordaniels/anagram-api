@@ -13,8 +13,8 @@ class AnagramsController < ApplicationController
   end
 
 #finds a word in the database by spelling attribute
-  def find_word
-    word = Word.find_by(spelling: params[:spelling])
+  def word
+    Word.find_by(spelling: params[:spelling])
   end
 
 #if the user passes a limit parameter, return that number of all applicable anagrams. If not, return all applicable anagrams.

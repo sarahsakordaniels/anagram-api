@@ -49,6 +49,7 @@ GEM
     byebug (11.0.1)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
+    descriptive_statistics (2.5.1)
     erubi (1.8.0)
     ffi (1.11.1)
     globalid (0.4.2)
@@ -134,6 +135,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
+  descriptive_statistics (~> 2.5, >= 2.5.1)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
