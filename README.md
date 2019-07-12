@@ -9,7 +9,7 @@ To set this up in your local envinronment...
 
 2. Run `rails db:create`, `rails db:migrate` and `rails db:seed`. Seeding the full dictionary file of over 200,00 words would take quite some time, so I've provided a condensed option in lib/dictionary.txt. Searchable words to explore the functionality of the API include "read", "taco", and "cat".
 
-3. Run `rails s` to boot up the server on localhost:3000. 
+3. Run `rails s` to boot up the server on localhost:3000.
 
 ## Design
 When deciding on what language/framework to utilize, I decided on Rails for it's wonderful "quick start" magic. Although I appreciate a good learning experience (which this still was), I do appreciate good time management and Rails does a good job of getting my projects up and going so I can spend more brain power on logic rather than setting up the basics.
@@ -38,7 +38,7 @@ To post and delete, utilize an API development environment/HTTP tool (ex. Postma
 `GET /anagrams/:word.json?limit=(number)`:
 + This endpoint supports an optional query param that indicates the maximum number of results to return.
 
-`DELETE /words/:word.json`: 
+`DELETE /words/:word.json`:
 + Deletes a single word from the data store.
 
 `DELETE /words.json`:
