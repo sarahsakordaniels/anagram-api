@@ -26,26 +26,25 @@ To post and delete, utilize an API development environment/HTTP tool (ex. Postma
 `POST /words.json`
 <br>
 + Takes a JSON array of English-language words and adds them to the database
-<br><br>
+<br>
 `GET /anagrams/:word.json`
 <br>
 + Returns a JSON array of English-language words that are anagrams of the word passed in the URL.
-<br><br>
+<br>
 `GET /anagrams/:word.json?limit=(number)`:
 + This endpoint supports an optional query param that indicates the maximum number of results to return.
-  <br><br>
- `DELETE /words/:word.json`: 
+<br>
+`DELETE /words/:word.json`: 
 <br>
 + Deletes a single word from the data store.
-<br><br>
+<br>
 `DELETE /words.json`:
 <br>
 + Deletes all contents of the data store.
-<br><br>
-
+<br>
 `GET /words/data`
  + Endpoint that returns a count of words in the corpus and min/max/median/average word length
-<br><br>
+<br>
 `GET words/most_anagrams`
 <br>
 + Endpoint that identifies words with the most anagrams
