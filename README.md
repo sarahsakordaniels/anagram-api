@@ -11,4 +11,8 @@ To set this up in your local envinronment...<br><br>
 When deciding on what langauge/framework to utilize, I decided on Rails for it's wonderful "quick start" magic. Although I appreciate a good learning experience (which this still was), I do appreciate good time management and Rails does a good job of getting my projects up and going so I can spend more brain power on logic rather than setting up the basics.
 <br>
 <h2>Using the API</h2>
+For get requests, use localhost:3000/anagrams/:word to find anagrams of the passed word. <br>
+To post and delete, utilize an API development environment/HTTP tool (ex. Postman)
+<br><br>
+*put endpoints and examples here*
 
