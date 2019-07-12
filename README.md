@@ -2,17 +2,51 @@
 An anagram is a word formed by another word by rearranging letters. For example, an anagram of "coat" is "taco". This API can be used to find any existing anagrams of a word, given it exists in the database!
 <br>
 <h2>Setup</h2>
-To set this up in your local envinronment...<br><br>
-1. Run "bundle" to install any gems<br><br>
+To set this up in your local envinronment...
+<br><br>
+1.	Run "bundle" to install any gems
+<br><br>
 2. Run rails db:create, rails db:migrate and rails db:seed. Seeding the full dictionary file of over 200,00 words would take quite some time, so I've provided a condensed option in lib/dictionary.txt. Searchable words to explore the functionality of the API include "read", "taco", and "cat".<br><br>
 3. Run "rails s" to boot up the server on localhost:3000. 
 <br>
 <h2>Design</h2>
-When deciding on what langauge/framework to utilize, I decided on Rails for it's wonderful "quick start" magic. Although I appreciate a good learning experience (which this still was), I do appreciate good time management and Rails does a good job of getting my projects up and going so I can spend more brain power on logic rather than setting up the basics.
+When deciding on what language/framework to utilize, I decided on Rails for it's wonderful "quick start" magic. Although I appreciate a good learning experience (which this still was), I do appreciate good time management and Rails does a good job of getting my projects up and going so I can spend more brain power on logic rather than setting up the basics.
+
+I created two models, Anagram and Word. Anagram has the attribute of “key”, a word split into all letters and sorted alphabetically. Any word containing this set of letters is stored under this key. Anagrams have many words, and words belong to anagrams.
+
+Ex. The word “taco” is will have the key “acot”. When the word “coat” is added to the database, it would also be stored under the key “acot”.
+
 <br>
-<h2>Using the API</h2>
-For get requests, use localhost:3000/anagrams/:word to find anagrams of the passed word. <br>
+<h2>Using the API & Endpoints</h2>
+A browser running localhost:3000 can be used for all GET requests.
+ <br>
 To post and delete, utilize an API development environment/HTTP tool (ex. Postman)
 <br><br>
-*put endpoints and examples here*
+
+<b>`POST /words.json`: </b>
+<br>
++ Takes a JSON array of English-language words and adds them to the database
+<br><br>
+<b>`GET /anagrams/:word.json`:</b>
+<br>
++ Returns a JSON array of English-language words that are anagrams of the word passed in the URL.
+<br><br>
+<b>`GET /anagrams/:word.json?limit=(number)`:</b>
++ This endpoint supports an optional query param that indicates the maximum number of results to return.
+  <br><br>
+ <b>`DELETE /words/:word.json`: </b>
+<br>
+Deletes a single word from the data store.
+<br><br>
+<b>`DELETE /words.json`: </b>
+<br>
+Deletes all contents of the data store.
+<br><br>
+
+<b>GET /words/data</b>
+ Endpoint that returns a count of words in the corpus and min/max/median/average word length
+<br><br>
+<b>GET words/most_anagrams</b>
+<br>
+Endpoint that identifies words with the most anagrams
 
