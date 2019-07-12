@@ -36,17 +36,17 @@ To post and delete, utilize an API development environment/HTTP tool (ex. Postma
   <br><br>
  <b>`DELETE /words/:word.json`: </b>
 <br>
-Deletes a single word from the data store.
++ Deletes a single word from the data store.
 <br><br>
 <b>`DELETE /words.json`: </b>
 <br>
-Deletes all contents of the data store.
++ Deletes all contents of the data store.
 <br><br>
 
 <b>GET /words/data</b>
- Endpoint that returns a count of words in the corpus and min/max/median/average word length
+ + Endpoint that returns a count of words in the corpus and min/max/median/average word length
 <br><br>
 <b>GET words/most_anagrams</b>
 <br>
-Endpoint that identifies words with the most anagrams
++ Endpoint that identifies words with the most anagrams
 
