@@ -23,30 +23,30 @@ A browser running localhost:3000 can be used for all GET requests.
 To post and delete, utilize an API development environment/HTTP tool (ex. Postman)
 <br><br>
 
-<b>`POST /words.json`: </b>
+`POST /words.json`
 <br>
 + Takes a JSON array of English-language words and adds them to the database
 <br><br>
-<b>`GET /anagrams/:word.json`:</b>
+`GET /anagrams/:word.json`
 <br>
 + Returns a JSON array of English-language words that are anagrams of the word passed in the URL.
 <br><br>
-<b>`GET /anagrams/:word.json?limit=(number)`:</b>
+`GET /anagrams/:word.json?limit=(number)`:
 + This endpoint supports an optional query param that indicates the maximum number of results to return.
   <br><br>
- <b>`DELETE /words/:word.json`: </b>
+ `DELETE /words/:word.json`: 
 <br>
 + Deletes a single word from the data store.
 <br><br>
-<b>`DELETE /words.json`: </b>
+`DELETE /words.json`:
 <br>
 + Deletes all contents of the data store.
 <br><br>
 
-<b>GET /words/data</b>
+`GET /words/data`
  + Endpoint that returns a count of words in the corpus and min/max/median/average word length
 <br><br>
-<b>GET words/most_anagrams</b>
+`GET words/most_anagrams`
 <br>
 + Endpoint that identifies words with the most anagrams
 
