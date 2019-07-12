@@ -17,9 +17,9 @@ When deciding on what language/framework to utilize, I decided on Rails for it's
 
 I created two models, Anagram and Word. Anagram has the attribute of “key”, a word split into all letters and sorted alphabetically. Any word containing this set of letters is stored under this key. Anagrams have many words, and words belong to anagrams.
 
-
 + Ex. The word “taco” is will have the key “acot”. When the word “coat” is added to the database, it would also be stored under the key “acot”.
 
+When first presented with this problem, I thought to implement logic that would take in a word parameter and search the entire database for other words that contain the same letters. However, this would be inefficient and take long time given a full dictionary database. With the user in mind, a more prompt result is delivered with the anagram key + word model.
 
 ## Using the API & Endpoints
 A browser running localhost:3000 can be used for all GET requests.
