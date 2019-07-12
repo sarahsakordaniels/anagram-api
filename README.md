@@ -1,5 +1,15 @@
 ## Anagram API
-An anagram is a word formed by another word by rearranging letters. For example, an anagram of "coat" is "taco". This API can be used to find any existing anagrams of a word, given it exists in the database!
+An anagram is a word formed by another word by rearranging it's letters. For example, an anagram of "coat" is "taco". This API can be used to find any existing anagrams of a word, given it exists in the database!
+
+
+## Setup
+To set this up in your local envinronment...
+
+1.	Run `bundle` to install any gems
+
+2. Run `rails db:create`, `rails db:migrate` and `rails db:seed`. Seeding the full dictionary file of over 200,000 words would take quite some time, so I've provided a condensed option in lib/short_dictionary.txt. Searchable words to explore the functionality of the API include "read", "taco", and "cat". If desired, the full 200,000+ word file is available under full_dictionary.txt.
+
+3. Run `rails s` to boot up the server on localhost:3000.
 
 ## Design
 When deciding on what language/framework to utilize, I decided on Rails for it's wonderful "quick start" magic. Although I appreciate a good learning experience (which this still was), I do appreciate good time management and Rails does a good job of getting my projects up and going so I can spend more brain power on logic rather than setting up the basics.
@@ -10,18 +20,6 @@ I created two models, Anagram and Word. Anagram has the attribute of “key”, 
 + Ex. The word “taco” is will have the key “acot”. When the word “coat” is added to the database, it would also be stored under the key “acot”.
 
 When first presented with this problem, I thought to implement logic that would take in a word parameter and search the entire database for other words that contain the same letters. However, this would be inefficient and take long time given a full dictionary database. With the user in mind, a more prompt result is delivered with the anagram key + word model.
-
-
-## Setup
-To set this up in your local envinronment...
-
-1.	Run `bundle` to install any gems
-
-2. Run `rails db:create`, `rails db:migrate` and `rails db:seed`. Seeding the full dictionary file of over 200,00 words would take quite some time, so I've provided a condensed option in lib/short_dictionary.txt. Searchable words to explore the functionality of the API include "read", "taco", and "cat".
-  + The full dictionary is available in lib/full_dictionary.txt if desired. Just change "short_dictionary" to "full_dictionary" in the seed file.
-
-3. Run `rails s` to boot up the server on localhost:3000.
-
 
 ## Using the API & Endpoints
 A browser running localhost:3000 can be used for all GET requests.
