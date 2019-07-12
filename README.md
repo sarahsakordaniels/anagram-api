@@ -1,8 +1,8 @@
-<h2>Anagram API</h2>
+## Anagram API
 An anagram is a word formed by another word by rearranging letters. For example, an anagram of "coat" is "taco". This API can be used to find any existing anagrams of a word, given it exists in the database!
 
 
-<h2>Setup</h2>
+## Setup
 To set this up in your local envinronment...
 
 
@@ -13,7 +13,7 @@ To set this up in your local envinronment...
 3. Run `rails s` to boot up the server on localhost:3000. 
 
 
-<h2>Design</h2>
+## Design
 When deciding on what language/framework to utilize, I decided on Rails for it's wonderful "quick start" magic. Although I appreciate a good learning experience (which this still was), I do appreciate good time management and Rails does a good job of getting my projects up and going so I can spend more brain power on logic rather than setting up the basics.
 
 
@@ -22,8 +22,8 @@ I created two models, Anagram and Word. Anagram has the attribute of “key”, 
 
 Ex. The word “taco” is will have the key “acot”. When the word “coat” is added to the database, it would also be stored under the key “acot”.
 
-<br>
-<h2>Using the API & Endpoints</h2>
+
+## Using the API & Endpoints
 A browser running localhost:3000 can be used for all GET requests.
 
 
