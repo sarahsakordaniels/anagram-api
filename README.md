@@ -5,13 +5,9 @@ An anagram is a word formed by another word by rearranging letters. For example,
 ## Setup
 To set this up in your local envinronment...
 
-
 1.	Run `bundle` to install any gems
-
 2. Run `rails db:create`, `rails db:migrate` and `rails db:seed`. Seeding the full dictionary file of over 200,00 words would take quite some time, so I've provided a condensed option in lib/dictionary.txt. Searchable words to explore the functionality of the API include "read", "taco", and "cat".<br><br>
-
 3. Run `rails s` to boot up the server on localhost:3000. 
-
 
 ## Design
 When deciding on what language/framework to utilize, I decided on Rails for it's wonderful "quick start" magic. Although I appreciate a good learning experience (which this still was), I do appreciate good time management and Rails does a good job of getting my projects up and going so I can spend more brain power on logic rather than setting up the basics.
@@ -20,7 +16,7 @@ When deciding on what language/framework to utilize, I decided on Rails for it's
 I created two models, Anagram and Word. Anagram has the attribute of “key”, a word split into all letters and sorted alphabetically. Any word containing this set of letters is stored under this key. Anagrams have many words, and words belong to anagrams.
 
 
-Ex. The word “taco” is will have the key “acot”. When the word “coat” is added to the database, it would also be stored under the key “acot”.
++ Ex. The word “taco” is will have the key “acot”. When the word “coat” is added to the database, it would also be stored under the key “acot”.
 
 
 ## Using the API & Endpoints
