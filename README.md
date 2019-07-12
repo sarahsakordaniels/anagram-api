@@ -52,4 +52,4 @@ To post and delete, utilize an API development environment/HTTP tool (ex. Postma
 + Endpoint that identifies words with the most anagrams
 
 ## Future Implementations
-Currently, the API only shows exact anagrams for a queried word. For example, when the word "dear" is queried, it will only return four-letter anagrams that contain exactly the letters d, e, a, and r - "read, "dare", and so on. I would like to implement logic that gives all the possible words that could be created from a given set of letters, much like the game Scrabble. So given the word "dear" again, it would return "read" and "dare" along with words like "rad", "red", "ad", and so on.
+Currently, the API only shows exact anagrams for a queried word. For example, when the word "dear" is queried, it will only return four-letter anagrams that contain exactly the letters d, e, a, and r - "read, "dare", and so on. I would like to implement logic that gives all the possible words that could be created from a given set of letters, much like the game Scrabble. So given the word "dear" again, it would return "read" and "dare" along with words like "rad", "red", "ad", etc.
