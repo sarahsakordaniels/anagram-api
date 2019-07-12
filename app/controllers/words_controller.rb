@@ -14,8 +14,13 @@ class WordsController < ApplicationController
     does_word_exist?
   end
 
+#GET data on words
+def data
+  render json: Word.data
+end
+
    private
-   
+
 #find word in the db
   def word
     Word.find_by(spelling: params[:spelling])
