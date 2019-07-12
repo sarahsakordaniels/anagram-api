@@ -22,6 +22,7 @@ A browser running localhost:3000 can be used for all GET requests.
  <br>
 To post and delete, utilize an API development environment/HTTP tool (ex. Postman)
 <br><br>
+
 `POST /words.json`
 + Takes a JSON array of English-language words and adds them to the database
 
