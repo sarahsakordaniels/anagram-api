@@ -21,7 +21,7 @@ Ex. The word “taco” is will have the key “acot”. When the word “coat�
 A browser running localhost:3000 can be used for all GET requests.
  <br>
 To post and delete, utilize an API development environment/HTTP tool (ex. Postman)
-<br>
+<br><br>
 `POST /words.json`
 + Takes a JSON array of English-language words and adds them to the database
 
@@ -30,19 +30,16 @@ To post and delete, utilize an API development environment/HTTP tool (ex. Postma
 
 `GET /anagrams/:word.json?limit=(number)`:
 + This endpoint supports an optional query param that indicates the maximum number of results to return.
-<br>
+
 `DELETE /words/:word.json`: 
-<br>
 + Deletes a single word from the data store.
-<br>
+
 `DELETE /words.json`:
-<br>
 + Deletes all contents of the data store.
-<br>
+
 `GET /words/data`
  + Endpoint that returns a count of words in the corpus and min/max/median/average word length
-<br>
+
 `GET words/most_anagrams`
-<br>
 + Endpoint that identifies words with the most anagrams
 
