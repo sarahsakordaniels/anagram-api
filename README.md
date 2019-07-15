@@ -37,7 +37,7 @@ To POST and DELETE, utilize an API development environment/HTTP tool (ex. Postma
 
 <br>
 
-### ***`POST /words.json`***
+#### ***`POST /words.json`***
 ***
 + Takes a JSON array of English-language words and adds them to the database
 <p align="center">
@@ -47,7 +47,7 @@ To POST and DELETE, utilize an API development environment/HTTP tool (ex. Postma
 <br><br>
 
 
-### ***`GET /anagrams/:word.json`***
+#### ***`GET /anagrams/:word.json`***
 ***
 + Returns a JSON array of English-language words that are anagrams of the word passed as a parameter in the URL.
 
@@ -63,7 +63,7 @@ To POST and DELETE, utilize an API development environment/HTTP tool (ex. Postma
 src="https://lh3.googleusercontent.com/JZPd0sUi0wGNAP2OO2wrgC9TweCnUMu5p5KJ6XL9UMYc04S5Qflxx0v61813lunb0ftFu29w-aMMZlSFzSpXl6qvUfDQNf9BxVHUJhRo8DEXO22xxKxzWV2WaA-eCeG6Zccn8rbDAn4LVI0L1TsEAYJTYlDnEw5pMuSRnWVZxRbxpIhOtfiVrK-hu51KJS47fVKpJ2l70c4_h3lZWcZW5bS2bfEYKQgVbXZWSq_DikU18CWFkebp1idtADNKGAHZ79J1WFfks189clodSVTqKhxUdG9cWGd4mHDpn0edu_MGHCCZTFeEFvYm2w-Rz_Pa5HMTvg6DMEUofTrvD6tl8UKXKbSLUT9jItuEp3i3gjns7IeZUy4r534N3txorJacbjSuW65l-Qt2Uf3Z4sY7vGos85qCgJKWUkFWaahKbDLGdMzOuCfeH5rNzWwByBY29gqsSb79ICqT3W28wntBHHSpoBWT5RHNO90zkXYi5shSS3xT_Y6YE4ztKDOF-w-iAW8jZ9cgee7OgENPCn6BoQTHpWSL0TUnTtmmpS6hI4flQJt-zwtHcOf5RfKw3k58Go8LZkz-wSgdL1zBs2xhmLGZaB7ysFT5OnKPnLs2MLO6UHxCUvlbTKse1qMUtBTptAUqYqc9FnvRA5iuR2CTlhD4mJt2Sag=w886-h180-no" width="50%" height="50%" title="word does not exist"></p>
 <br><br>
 
-### ***`GET /anagrams/:word.json?limit=(number)`:***
+#### ***`GET /anagrams/:word.json?limit=(number)`:***
 ***
 + This endpoint supports an optional parameter that indicates the maximum number of queried results to return.
 
@@ -71,7 +71,7 @@ src="https://lh3.googleusercontent.com/JZPd0sUi0wGNAP2OO2wrgC9TweCnUMu5p5KJ6XL9U
 <br><br>
 
 
-### ***`DELETE /words/:word.json`:***
+#### ***`DELETE /words/:word.json`:***
 ***
 + Deletes a single word from the data store.
 
@@ -79,7 +79,7 @@ src="https://lh3.googleusercontent.com/JZPd0sUi0wGNAP2OO2wrgC9TweCnUMu5p5KJ6XL9U
 <br><br>
 
 
-### ***`DELETE /words.json`:***
+#### ***`DELETE /words.json`:***
 ***
 + Deletes all contents of the data store.
 
@@ -87,7 +87,7 @@ src="https://lh3.googleusercontent.com/JZPd0sUi0wGNAP2OO2wrgC9TweCnUMu5p5KJ6XL9U
 <br><br>
 
 
-### ***`GET /words/data`***
+#### ***`GET /words/data`***
 ***
  + Endpoint that returns a count of words in the corpus and min/max/median/average word length
  <p align="center">
@@ -97,7 +97,7 @@ src="https://lh3.googleusercontent.com/JZPd0sUi0wGNAP2OO2wrgC9TweCnUMu5p5KJ6XL9U
 <br><br>
 
 
-### ***`GET words/most_anagrams`***
+#### ***`GET words/most_anagrams`***
 ***
 + Endpoint that identifies words with the most anagrams
  <p align="center">
