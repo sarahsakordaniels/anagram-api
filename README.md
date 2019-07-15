@@ -43,12 +43,13 @@ I created two models, ***anagram*** and ***word***. Anagram has the attribute of
 <br>
 
 
-| Key        | Word         | 
-|:------------- |:-------------| 
-| "aekm"      | "make",  |
-| "eervy"    | "every"     |
-| "aechprsu" | "purchase"      | 
-| "adeginrrw" | "rewarding"  | 
+| Key        | Word         | Word               |
+|------------- |-------------|-------------| 
+| "aekm"      | "make"  | "kame"  |
+| "eervy"    | "every"     | "veery" |
+| "aechprsu" | "purchase"      |   |
+| "adeginrrw" | "rewarding"  | "redrawing" |
+
 
 
 <br>
