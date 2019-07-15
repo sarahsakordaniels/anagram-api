@@ -38,19 +38,20 @@ I created two models, ***anagram*** and ***word***. Anagram has the attribute of
 <p align="center">
 <img src="https://lh3.googleusercontent.com/xezt6wrYqjJFaCYGrk2wLpIwfG2Ta7WRCrtmLq4_sKKEg3MrXIsBb6TSMTNI7wG1R5HA5jYrDt3EaXvPyfC-SmYycO-Sg8BO5MZZRlcJAGH3_mJY7XVnKwcaAKxFuYEp9nys00qZdGTjHKkgdA9J6eP9o9qr6mDEO0sf5PPZd-4yqwXu-wuo36DlT_ke7mcUffXpyXVDE9rQ7TeE7RZ1PUe16eDWFjrC7AZdmFRs_MFK3-wpa31DXF2wl2FOcj1z9MVNgxpWPV3zvqQvCx6Y3wo4eek0-N3JexM_rqBYHpyOEVNZVhaupJTAVxDLY5iZpzkI-c_VknQ2o--aUwPWD9-ltymJovlZ_j02LvbGDwuUH9jM-pKs2wkXakfQ8kniwwI_RLM1QGdl5_SnIj-YxkFl_4bWuMrjOUw1A-cvvJjUnVi54WtPVYbI7S5imVHAb2HxzdJQTspPknGOoAHFt_5ao9esBOYv0PuBTY9AP2dHu_hDiF-KpMPVHuk4vI5zQFXT0KIwD6H5tsxSZoN1cgzBgYoNospotWkXL1t1BsinzD5MwMqOaOdWtPvQQR9qdSDM4gHql9UHF78rufyeTAEK3n5q0K5eV2p9-60A7_6tT15S8DBDQLPekQ48UyZnoP-3GFCPUsiKRXW25ujCmwmVE42qPbM=w1024-h340-no" width="50%" height="50%" title="word model"></p>
 
-  + Ex. The word “ibotta” will have the *key* “abiott”. When the word “biota” is added to the database, it would also be stored under the *key* “abiott”.
+  + Example: The word “ibotta” will have the *key* “abiott”. When the word “biota” is added to the database, it would also be stored under the *key* “abiott”.
 
-
+<br>
 
 
 | Key        | Word         | 
-| ------------- |:-------------:| 
+|:------------- |:-------------| 
 | "aekm"      | "make",  |
 | "eervy"    | "every"     |
 | "aechprsu" | "purchase"      | 
 | "adeginrrw" | "rewarding"  | 
 
-<br><br>
+
+<br>
 
 
 When first presented with this problem, I thought to implement logic that would take in the parameter of a word and search the entire database for other words that contain the same letters. However, this would be inefficient and take a long time given a full dictionary database. With the user in mind, a more prompt result is delivered with the anagram key + word model.
