@@ -21,9 +21,9 @@ To set this API up in your local envinronment...
 # Design
 When deciding on what language/framework to utilize, I decided on Rails for it's wonderful "quick start" magic. Although I appreciate a quality learning experience (which this definitely still was!), I also value efficient time management. Rails effectively builds the foundation of my projects, allowing me more brain power to spend on logic rather than setting up the boilerplate.
 
-I created two models, ***anagram*** and ***word***. ***Anagram*** has the attribute of *key*, a word split into all letters and sorted alphabetically. Any ***word*** containing this set of letters (under an attribute called *spelling*) is stored under this *key*. ***Anagrams*** have many ***words***, and ***words*** belong to ***anagrams***.
+I created two models, ***anagram*** and ***word***. Anagram has the attribute of *key*, a word split into all letters and sorted alphabetically. Any word containing this set of letters (under an attribute called *spelling*) is stored under this key. Anagrams have many words, and words belong to anagrams.
 
-+ Ex. The ***word*** “taco” is will have the *key* “acot”. When the ***word*** “coat” is added to the database, it would also be stored under the *key* “acot”.
++ Ex. The word “taco” is will have the *key* “acot”. When the word “coat” is added to the database, it would also be stored under the *key* “acot”.
 
 <p align="center">
 <img src="https://lh3.googleusercontent.com/cd8IAirOIE_TYGiYPnIIfQkFVtMiePqdAAcQX_Wa-NwkLbHpsbTPmccoQ3L7VrQ-mBHAi4u2Pyb7akAW59IcRghkkgED9jgvcQm3ERN0nUvM4CU3N1XHE39ISLnpeDYXTrrSVN7NnfRPJdYrPGTC1aylmrWdIIfVe5XR_rP4M-UfQVdHj4o_e7XTtIhCY83ILfaJ7Dt-YKis55nPKzgi624NPcvWAbP6Jiu3woHp4CaFVUzp0nGo7zoF635Udt7rkM4pyoj-7Xj_eCurCj7WS-8Y4rAl1ftZFZrxPvQYNgZpmU6937-yS9YJWTINd2ZAG2bnkpp-B_5ATR0oxhiSroJb2MherD3CWUTeVVBbWI8BxXOY_p21r8UeWhl6Yht_KpO7bv6W_H1kipixbttZAyQnhx3RS7GThwrHRbsEGV72GFyO-p7I7nvjDS59ufGS39PGPQvHCFT_57hQtpIvmjTBNkUrSS_rSMEFcqvYjrPllY_8FqnvafBQkhug5IOfj28OsNmvpK9d0YbDnrO_U8NBEiTnIr6VmqVcGgCioWzchwvR45p3ITHuLZjoghmP_dfTR2JEtU3aE4uDwCCY4VDRwvklCbF46nO9a5la4E3BX0QO1Zg-rr4qffw1HHLsJ9b9PVPjwpJRFbWtlYDvdoEGNb_5_Ek=w1010-h350-no" width="50%" height="50%" title="anagram model"></p>
