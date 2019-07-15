@@ -16,8 +16,10 @@ To set this API up in your local envinronment...
 1.	Run `bundle` to install any gems/dependencies.
 
 2. Run `rails db:create`, `rails db:migrate`, and `rails db:seed`. 
-  +Seeding the full dictionary file of over 200,000 words would take quite some time, so I've provided a condensed option in lib/short_dictionary.txt. Searchable words to explore the functionality of the API include "read", "taco", and "cat".
-  + If desired, the full 200,000+ word file is available under "lib/full_dictionary.txt". Just change "short_dictionary" in the seed.rb file to "full_dictionary"
+  
+    + Seeding the full dictionary file of over 200,000 words would take quite some time, so I've provided a condensed option in lib/short_dictionary.txt. Searchable words to explore the functionality of the API include "read", "taco", and "cat".
+ 
+    + If desired, the full 200,000+ word file is available under "lib/full_dictionary.txt". Just change "short_dictionary" in the seed.rb file to "full_dictionary"
 
 3. Run `rails s` to boot up the server on localhost:3000.
 
@@ -29,13 +31,26 @@ When deciding on what language/framework to utilize, I decided on Rails for it's
 
 I created two models, ***anagram*** and ***word***. Anagram has the attribute of *key*, a word split into all letters and sorted alphabetically. Any word containing this set of letters (under an attribute called *spelling*) is stored under this key. Anagrams have many words, and words belong to anagrams.
 
-+ Ex. The word “taco” is will have the *key* “acot”. When the word “coat” is added to the database, it would also be stored under the *key* “acot”.
 
 <p align="center">
 <img src="https://lh3.googleusercontent.com/cd8IAirOIE_TYGiYPnIIfQkFVtMiePqdAAcQX_Wa-NwkLbHpsbTPmccoQ3L7VrQ-mBHAi4u2Pyb7akAW59IcRghkkgED9jgvcQm3ERN0nUvM4CU3N1XHE39ISLnpeDYXTrrSVN7NnfRPJdYrPGTC1aylmrWdIIfVe5XR_rP4M-UfQVdHj4o_e7XTtIhCY83ILfaJ7Dt-YKis55nPKzgi624NPcvWAbP6Jiu3woHp4CaFVUzp0nGo7zoF635Udt7rkM4pyoj-7Xj_eCurCj7WS-8Y4rAl1ftZFZrxPvQYNgZpmU6937-yS9YJWTINd2ZAG2bnkpp-B_5ATR0oxhiSroJb2MherD3CWUTeVVBbWI8BxXOY_p21r8UeWhl6Yht_KpO7bv6W_H1kipixbttZAyQnhx3RS7GThwrHRbsEGV72GFyO-p7I7nvjDS59ufGS39PGPQvHCFT_57hQtpIvmjTBNkUrSS_rSMEFcqvYjrPllY_8FqnvafBQkhug5IOfj28OsNmvpK9d0YbDnrO_U8NBEiTnIr6VmqVcGgCioWzchwvR45p3ITHuLZjoghmP_dfTR2JEtU3aE4uDwCCY4VDRwvklCbF46nO9a5la4E3BX0QO1Zg-rr4qffw1HHLsJ9b9PVPjwpJRFbWtlYDvdoEGNb_5_Ek=w1010-h350-no" width="50%" height="50%" title="anagram model"></p>
 <br>
 <p align="center">
 <img src="https://lh3.googleusercontent.com/xezt6wrYqjJFaCYGrk2wLpIwfG2Ta7WRCrtmLq4_sKKEg3MrXIsBb6TSMTNI7wG1R5HA5jYrDt3EaXvPyfC-SmYycO-Sg8BO5MZZRlcJAGH3_mJY7XVnKwcaAKxFuYEp9nys00qZdGTjHKkgdA9J6eP9o9qr6mDEO0sf5PPZd-4yqwXu-wuo36DlT_ke7mcUffXpyXVDE9rQ7TeE7RZ1PUe16eDWFjrC7AZdmFRs_MFK3-wpa31DXF2wl2FOcj1z9MVNgxpWPV3zvqQvCx6Y3wo4eek0-N3JexM_rqBYHpyOEVNZVhaupJTAVxDLY5iZpzkI-c_VknQ2o--aUwPWD9-ltymJovlZ_j02LvbGDwuUH9jM-pKs2wkXakfQ8kniwwI_RLM1QGdl5_SnIj-YxkFl_4bWuMrjOUw1A-cvvJjUnVi54WtPVYbI7S5imVHAb2HxzdJQTspPknGOoAHFt_5ao9esBOYv0PuBTY9AP2dHu_hDiF-KpMPVHuk4vI5zQFXT0KIwD6H5tsxSZoN1cgzBgYoNospotWkXL1t1BsinzD5MwMqOaOdWtPvQQR9qdSDM4gHql9UHF78rufyeTAEK3n5q0K5eV2p9-60A7_6tT15S8DBDQLPekQ48UyZnoP-3GFCPUsiKRXW25ujCmwmVE42qPbM=w1024-h340-no" width="50%" height="50%" title="word model"></p>
+
+  + Ex. The word “ibotta” will have the *key* “abiott”. When the word “biota” is added to the database, it would also be stored under the *key* “abiott”.
+
+
+
+
+| Key        | Word         | 
+| ------------- |:-------------:| 
+| "aekm"      | "make",  |
+| "eervy"    | "every"     |
+| "aechprsu" | "purchase"      | 
+| "adeginrrw" | "rewarding"  | 
+
+<br><br>
 
 
 When first presented with this problem, I thought to implement logic that would take in the parameter of a word and search the entire database for other words that contain the same letters. However, this would be inefficient and take a long time given a full dictionary database. With the user in mind, a more prompt result is delivered with the anagram key + word model.
