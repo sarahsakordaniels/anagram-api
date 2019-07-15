@@ -1,10 +1,10 @@
-## Anagram API
+# Anagram API
 An anagram is a word formed by another word by rearranging it's letters. For example, an anagram of "coat" is "taco". This API can be used to find any existing anagrams of a word, given it exists in the database!
 
 
 
 
-## Setup
+# Setup
 To set this API up in your local envinronment...
 
 1.	Run `bundle` to install any gems/dependencies.
@@ -18,7 +18,7 @@ To set this API up in your local envinronment...
 
 
 
-## Design
+# Design
 When deciding on what language/framework to utilize, I decided on Rails for it's wonderful "quick start" magic. Although I appreciate a quality learning experience (which this definitely still was!), I also value efficient time management. Rails effectively builds the foundation of my projects, allowing me more brain power to spend on logic rather than setting up the boilerplate.
 
 I created two models, Anagram and Word. Anagram has the attribute of “key”, a word split into all letters and sorted alphabetically. Any word containing this set of letters is stored under this key. Anagrams have many words, and words belong to anagrams.
@@ -30,21 +30,21 @@ When first presented with this problem, I thought to implement logic that would 
 
 
 
-## Using the API & Endpoints
+# Using the API & Endpoints
 With the API running on localhost:3000, a browser can be used for all GET requests.
 
 To POST and DELETE, utilize an API development environment/HTTP tool (ex. Postman)
 
 ***
 
-***`POST /words.json`***
+### ***`POST /words.json`***
 + Takes a JSON array of English-language words and adds them to the database
 <p align="center">
 <img src="https://lh3.googleusercontent.com/_m75vFcFeLWv7Par3Lfgfl-MUJRVsJO-BQU4dYviywUfzPGrRN0Yy1KDCx6_-e6cZNgTJT75jOWMKJY7p4RhT49lg-rxf19vubTwjkedy7xWLOwEzdGEDKKYWDbQFsJjeygNEXiiTnN0Kw7PMp35Bszz7NTs6owhtcFG4knO2NeI51EZwzTA39Dx2yiDbaToqcvkRWCLgYwHN-0KoY7I-Xs38rg487fe5SjNG58SNHTojkEtLevSeeAoR6g24VTkHxBGGX7uIW9CG7GEUpye6K2s2MvvWjaDDR33_YCAAl5r4SeRf6RQknaPsyR8aeg-eQcw55JhYEvrUIV__J2yr8wR_HuygFKIMlZGiWApRXmEUxynfIiLcNqK-5WsoQaxjRhACDJNviF5OXlun-gzFOkXY2SCUrKYkx1glcG-qJPsEdO6G-h6ob0kuMIMOTMUuux0aO9B1ha3xFSVQxAWEdrVcW7msjR2EH6Qj93rjlXl2-nuxD6WpjoMIze1UCYaYxUXRL_dU9wRblXszqN1_MT0sd_PcZ8zJHrQZNWcZ3ufJd6mhPkSlQZASnI0uzDGlxSJR3dDl2wuyrXVZFTb9EXq5oSNpN7JTljqklsA-AlqgdBbIFddWFNZYhazxRXO-Ij9K6Fm4hDIHmggb4g5_v6xCzTymtY=w2012-h602-no" width="100%" height="100%" title="post example"></p>
 
 ***
 
-***`GET /anagrams/:word.json`***
+### ***`GET /anagrams/:word.json`***
 + Returns a JSON array of English-language words that are anagrams of the word passed as a parameter in the URL.
 
 <p align="center"><i>If the queried word does not have any anagrams in the database...</i></p>
@@ -59,29 +59,29 @@ src="https://lh3.googleusercontent.com/JZPd0sUi0wGNAP2OO2wrgC9TweCnUMu5p5KJ6XL9U
 
 ***
 
-***`GET /anagrams/:word.json?limit=(number)`:***
+### ***`GET /anagrams/:word.json?limit=(number)`:***
 + This endpoint supports an optional parameter that indicates the maximum number of queried results to return.
 
 ***
 
-***`DELETE /words/:word.json`:***
+### ***`DELETE /words/:word.json`:***
 + Deletes a single word from the data store.
 
 ***
 
-***`DELETE /words.json`:***
+### ***`DELETE /words.json`:***
 + Deletes all contents of the data store.
 
 ***
 
-***`GET /words/data`***
+### ***`GET /words/data`***
  + Endpoint that returns a count of words in the corpus and min/max/median/average word length
  <p align="center">
 <img src="https://lh3.googleusercontent.com/7fNRJilXk0eT2U_Dc90WkPo8t1_UwRyxTYl4g3-Zz53n-mjt1YOpCA3hbYnfo24dlma4jRIgzRVCKEctM8tyLAstQrhWUIdu3yCXoBVU_8J0SBWPq1UlmKxV85VOPZopKHSwCsdiZpQblp9eVmHvRloVN_zwSdKLyp1pOAW3r9V3D9d0lqiP3lvzRqIpWljqNwsnHhL8EEmOyVhPWJrjNmejUb0VgA6QZUhqlTfH9yPnEzMaWwNhcjm-XV6V8qmGJx_xUX0ewSz5Fdl9gBbvaAcDnbwuQ4Gz5v-dWuAkL9zNDMB1CHRKM9BUfDgfo_iRwCJKKXZL79r3FV3sP-9_7iHr0tSkkpBZpvbyRBmmfLY3VI3zI87goHOKs-itFBLgsfxNYl_a61m1iLGIZeXwVQeMF1J2OruGYJ8l0ay_VM9Ng2mRlWD7R4n7GuKpCWAEhH18kWYpUi-c0hH53W81pt_R-_KRfoYqR9jOZ3SHzx6wexZ7GJ3y_EryXIxPGrgwBM52VmeBfpW-aviqFsjnv3I0J8z4vDvLvgIT5uVpwilYdcMJsUsx6iW1z5sqZnvKfRM0h9RE19tGGFKkVM4-O38SV4g77kgPruFO4fXnXkQCopCKpe8kmZTQutndS-lgfePlbo7d0WHMfM_0TH2a1Q-75xV8zpQ=w572-h278-no" width="50%" height="50%" title="data example"></p>
 
 ***
 
-***`GET words/most_anagrams`***
+### ***`GET words/most_anagrams`***
 + Endpoint that identifies words with the most anagrams
  <p align="center">
 <img src="https://lh3.googleusercontent.com/9jGnDLcZtT10fKhY9P2lwcdA4R3NLtVw0gxEd6nwdZrWQBZGVPhRHrBSva20-_uDXCgmcavEaasELkPDoO9bVzFqisrMMKEWzHpixztlPHkV9my-rvDESbkLSRRDSBR-XC2tZLxb8Us-SdIdqpblkjWBG48WVO0c1JIDdUWNBD7kgcp9Q9KSsScNZglkzu9ShhFXwWHp_-5IV4Uz4jXJ7E2-BPyvIPXacrbTBTcHREoMgyNp7uaa9Q4uV8G6ggS-Qo1XMi2BGcJjJ_f26p20NGX-bcHWkb8NLit1vDZSBj-7T8PhsVdCOcJK-tmldHo5WGGLdB3QN6vbBZe0sXzzbrxTS-Y6v7Tb_m_O5jJsv-KVXtTO2DMlDZOHt1AXwpov8GdbsjR2JpecyFQp8uFuyhkWjkrbPnOeCiAlLWpKljuru8Az3p9aqTi7UCEVgVhs3qNUWzbncc1-jFc45OB1B8fGhoBhgPUOSfz6SusSb9UGA3ZH2gfv8ha71xTjOXHWcwivi4cONGSI7bEjkeo_hhbKa4Es8F776_4y889PXnuWPlSsyVE62EvvqPF-MDIAvCw5MW6UpnjnO_36Hz_JBODScNjkid2r2Q4uwP2vlDvStK2G_iECWUFcrktHPOclxwrEHCc1-ASOot5tfPg-kfpna_q-kYY=w676-h278-no" width="50%" height="50%" title="data example"></p>
@@ -90,5 +90,5 @@ src="https://lh3.googleusercontent.com/JZPd0sUi0wGNAP2OO2wrgC9TweCnUMu5p5KJ6XL9U
 
 
 
-## Future Implementations
+# Future Implementations
 Currently, the API only shows exact anagrams for a queried word. For example, when the word "dear" is passed as a parameter, the API will only return four-letter anagrams that contain exactly the letters d, e, a, and r - like "read", "dare", and so on. I would like to implement logic that returns all the possible words that could be created from a given set of letters, resembling how one would play Scrabble. So given the word "dear" again, it would return "read" and "dare" along with words like "rad", "red", "ad", etc.
