@@ -21,12 +21,23 @@ To set this API up in your local envinronment...
 # Design
 When deciding on what language/framework to utilize, I decided on Rails for it's wonderful "quick start" magic. Although I appreciate a quality learning experience (which this definitely still was!), I also value efficient time management. Rails effectively builds the foundation of my projects, allowing me more brain power to spend on logic rather than setting up the boilerplate.
 
-I created two models, Anagram and Word. Anagram has the attribute of “key”, a word split into all letters and sorted alphabetically. Any word containing this set of letters is stored under this key. Anagrams have many words, and words belong to anagrams.
+I created two models, ***anagram*** and ***word***. ***Anagram*** has the attribute of *key*, a word split into all letters and sorted alphabetically. Any ***word*** containing this set of letters (under an attribute called *spelling*) is stored under this *key*. ***Anagrams*** have many ***words***, and ***words*** belong to ***anagrams***.
 
-+ Ex. The word “taco” is will have the key “acot”. When the word “coat” is added to the database, it would also be stored under the key “acot”.
++ Ex. The ***word*** “taco” is will have the *key* “acot”. When the ***word*** “coat” is added to the database, it would also be stored under the *key* “acot”.
+
+<p align="center">
+<img src="https://lh3.googleusercontent.com/cd8IAirOIE_TYGiYPnIIfQkFVtMiePqdAAcQX_Wa-NwkLbHpsbTPmccoQ3L7VrQ-mBHAi4u2Pyb7akAW59IcRghkkgED9jgvcQm3ERN0nUvM4CU3N1XHE39ISLnpeDYXTrrSVN7NnfRPJdYrPGTC1aylmrWdIIfVe5XR_rP4M-UfQVdHj4o_e7XTtIhCY83ILfaJ7Dt-YKis55nPKzgi624NPcvWAbP6Jiu3woHp4CaFVUzp0nGo7zoF635Udt7rkM4pyoj-7Xj_eCurCj7WS-8Y4rAl1ftZFZrxPvQYNgZpmU6937-yS9YJWTINd2ZAG2bnkpp-B_5ATR0oxhiSroJb2MherD3CWUTeVVBbWI8BxXOY_p21r8UeWhl6Yht_KpO7bv6W_H1kipixbttZAyQnhx3RS7GThwrHRbsEGV72GFyO-p7I7nvjDS59ufGS39PGPQvHCFT_57hQtpIvmjTBNkUrSS_rSMEFcqvYjrPllY_8FqnvafBQkhug5IOfj28OsNmvpK9d0YbDnrO_U8NBEiTnIr6VmqVcGgCioWzchwvR45p3ITHuLZjoghmP_dfTR2JEtU3aE4uDwCCY4VDRwvklCbF46nO9a5la4E3BX0QO1Zg-rr4qffw1HHLsJ9b9PVPjwpJRFbWtlYDvdoEGNb_5_Ek=w1010-h350-no" width="50%" height="50%" title="anagram model"></p>
+<br>
+<p align="center">
+<img src="https://lh3.googleusercontent.com/xezt6wrYqjJFaCYGrk2wLpIwfG2Ta7WRCrtmLq4_sKKEg3MrXIsBb6TSMTNI7wG1R5HA5jYrDt3EaXvPyfC-SmYycO-Sg8BO5MZZRlcJAGH3_mJY7XVnKwcaAKxFuYEp9nys00qZdGTjHKkgdA9J6eP9o9qr6mDEO0sf5PPZd-4yqwXu-wuo36DlT_ke7mcUffXpyXVDE9rQ7TeE7RZ1PUe16eDWFjrC7AZdmFRs_MFK3-wpa31DXF2wl2FOcj1z9MVNgxpWPV3zvqQvCx6Y3wo4eek0-N3JexM_rqBYHpyOEVNZVhaupJTAVxDLY5iZpzkI-c_VknQ2o--aUwPWD9-ltymJovlZ_j02LvbGDwuUH9jM-pKs2wkXakfQ8kniwwI_RLM1QGdl5_SnIj-YxkFl_4bWuMrjOUw1A-cvvJjUnVi54WtPVYbI7S5imVHAb2HxzdJQTspPknGOoAHFt_5ao9esBOYv0PuBTY9AP2dHu_hDiF-KpMPVHuk4vI5zQFXT0KIwD6H5tsxSZoN1cgzBgYoNospotWkXL1t1BsinzD5MwMqOaOdWtPvQQR9qdSDM4gHql9UHF78rufyeTAEK3n5q0K5eV2p9-60A7_6tT15S8DBDQLPekQ48UyZnoP-3GFCPUsiKRXW25ujCmwmVE42qPbM=w1024-h340-no" width="50%" height="50%" title="word model"></p>
+
 
 When first presented with this problem, I thought to implement logic that would take in the parameter of a word and search the entire database for other words that contain the same letters. However, this would be inefficient and take a long time given a full dictionary database. With the user in mind, a more prompt result is delivered with the anagram key + word model.
-
+***
+<br>
+<p align="center">
+<img src="https://lh3.googleusercontent.com/owNsyL9vI8xMMh-Re_0Bzp7n3felAbrCB7d9hCq7MFBjNMYHUyegii3hNzPQluz50CmMRKNWYUz-rhwpzSeQwQr9scQr0tYtOwR2v-z5r--q0jQyorOAyysZ6WnudjIV0h8RzJXcjJ7yko-2Z7Boi4BTEttdROrMEI-jrKzFomvTe-i74c6Hg8CDQk0pygj_tLoH_t7OTzyxtyh1ARLqt-Z1ISdY_dXIICAQKMjIdnlA92wYTpJTmLUJhHosy6i8ui9aDi3sfa1zc2sr_0FbigTfWsZiOunLvXb622HjifmXvUm9I9CDE58u4NrIChhLC2fo-tPPeimempnwtDhR36TZH3O0XF1z07xGOdsHVWETCTbgl7RIi5My2dvzi1O8RpgTmuqJg0T1R7r4AOFvdS8baNgMFnCPS9VAzJdV1jdAb1y7qCN12dtVWHkU8u9xu6OFIB_cQPSUEHlZznm2IwkkCxDFcYhMWkUk-xfvGVRiZRNTGxEataQIRRnq4MPmiNokgwdps4wCS5u_SLOyLWgROF55smUDBHQ61dusDTII3fOvdPov_3Tt7Z18TKn1TSKHHMXvmE9fuNWPspIgld3fDq1eYRf_vLsxxzo-gacGpjJbzYaVk2XMnVNmIn8nBfMD3qGQjAz1eTqscbB5c5iBA1Ym2NM=w1422-h312-no" width="75%" height="75%" title="seed file"></p>
+<p align="center"><i>Upon seeding, keys are created and words are matched with the appropriate key.</i></p>
 
 <br>
 
@@ -50,7 +61,7 @@ To POST and DELETE, utilize an API development environment/HTTP tool (ex. Postma
 #### ***`GET /anagrams/:word.json`***
 ***
 + Returns a JSON array of English-language words that are anagrams of the word passed as a parameter in the URL.
-
+<br>
 <p align="center"><i>If the queried word does not have any anagrams in the database...</i></p>
 <p align="center">
 <img src="https://lh3.googleusercontent.com/nDUf1hR5iTKS-brBWH-cUvHBP0JYwyyIQfSqp1vIjjZidP_TqvBH4rlJTAnIeEVX9e-qI_-fNoaGBpJOprEA-tGDeMthW1i1-khJEgZ7jSdJiDe3UW-03Ojt97U07oygHNPix7lGC_NGMccMG0DI2COta-hJEmUjjo1cd_EkLyO_Cv91LneKaBS6jxF4ba0Ym1m-VncVRXFM-ZnQ7CQKEfBytACpgVTv3aGotM0ieSLwA-6zgk-YFjmG4kiDLClHhqvvcfqDt5ZXoWw3wJwINXrlfPJusz6uCc8OkPsXMf7fcKN5ekIXWA1SuR5f9oOqng-VU71c1xUqA1Uv3Is2uUZBEPxk1zDLiD5SC07aKx6gMSFffz3h7WmcNVO0d4yvzcxIxSnXoRsnTtCBRob3oyJ8zqsA6VPME_jEHroLHlgGvRG_4LRPYH10VB1lx9ZmCuqLtFUGxYu4BGln6tkEj1uIA2bz-eIb93JDLNSkH1K7Gu3m4mHqTlpIseDsTP3q_t-B42zITr9HzouNbhmcZUkr34YNMgQg2BBs2-pCCc9lCtN4UdTJWzSzSjR2AETGNggcwaSmMTlCyWj_Atz4Rb0XedRpC_Wl4mHyQ6tr3Si1ShbiaIbZkSuMAJRotnVHz8iNOyAGPe9IecL2MbDY3q9fXc_I3k8=w844-h172-no" width="50%" height="50%" title="word does not have any anagrams"></p>
