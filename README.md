@@ -45,6 +45,7 @@ I created two models, ***anagram*** and ***word***. Anagram has the attribute of
 
 | Key        | Word         | Word               |
 |------------- |-------------|-------------| 
+| "abiott"      | "ibotta"  | "biota"  |
 | "aekm"      | "make"  | "kame"  |
 | "eervy"    | "every"     | "veery" |
 | "aechprsu" | "purchase"      |   |
