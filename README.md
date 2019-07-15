@@ -2,10 +2,11 @@
 
 
 <p align="center">
-<img src="https://lh3.googleusercontent.com/DLeTDqJUDSYn3FMh_Rl1ZxVWWUFbdaevG8_nmYRhgGDx0BLNPaywGc5wLm_QtJS7s3GOXBlD-UPZLXc-gR-ybAZFQ9uCLgjdsyPdgEUynnp0s73jQjFFnNMC87BB3NNKJF4h36EJ-wfPe18C7bfGQqSbI7DJMHQjCP1qEOqdbgbWxbvM3KrFnMYwiC0FxRlEvXgEu-4rcym8H5k20Lroh6jaK_cohDzHK4hUJt13R7msOMIx_WLl8Eki4hFiRh1m4C5WqfBOSfx04LbXcXIbNVKUrXfF-IvQzZSuFcN83oQxjNFynrFU2SvK0AXPAG9ZLKTUIf2_NvvM9CF8E0j8plgneG1a2mEcA5f3wsMqJfxo38kjS5mDK-Rwb5Ru9D1GOV0MnnMG-ZsKYY92-Tnbr6FUsnEVdYFoA-b4izMXHPIRfmyPaLdW0UfG3ToJ1tg9mPvQVwF0zCBc3SUQ2XWWhpoTyvTmjFJ0atwKu6D0y99D9e-2zRq63w-IUVYcatOWnYtU1DgZgModmm46LKlW-0KYPbcTQrLvx6rWs_lK8wNdrQpxrG_0fO0YusTnmaPZz7jeytLKWs-y4rYQv5gQpCTH-4sywGt5_sHDfs9EB_R5wdK6nOzbITu9M0_3WEu2lx6ocmfGHTSQbf5s4TA-75MDF5gZzdE=w1612-h464-no" width="100%" height="100%" title="Source: https://www.merriam-webster.com/dictionary/anagram"></p>
+<img src="https://lh3.googleusercontent.com/DLeTDqJUDSYn3FMh_Rl1ZxVWWUFbdaevG8_nmYRhgGDx0BLNPaywGc5wLm_QtJS7s3GOXBlD-UPZLXc-gR-ybAZFQ9uCLgjdsyPdgEUynnp0s73jQjFFnNMC87BB3NNKJF4h36EJ-wfPe18C7bfGQqSbI7DJMHQjCP1qEOqdbgbWxbvM3KrFnMYwiC0FxRlEvXgEu-4rcym8H5k20Lroh6jaK_cohDzHK4hUJt13R7msOMIx_WLl8Eki4hFiRh1m4C5WqfBOSfx04LbXcXIbNVKUrXfF-IvQzZSuFcN83oQxjNFynrFU2SvK0AXPAG9ZLKTUIf2_NvvM9CF8E0j8plgneG1a2mEcA5f3wsMqJfxo38kjS5mDK-Rwb5Ru9D1GOV0MnnMG-ZsKYY92-Tnbr6FUsnEVdYFoA-b4izMXHPIRfmyPaLdW0UfG3ToJ1tg9mPvQVwF0zCBc3SUQ2XWWhpoTyvTmjFJ0atwKu6D0y99D9e-2zRq63w-IUVYcatOWnYtU1DgZgModmm46LKlW-0KYPbcTQrLvx6rWs_lK8wNdrQpxrG_0fO0YusTnmaPZz7jeytLKWs-y4rYQv5gQpCTH-4sywGt5_sHDfs9EB_R5wdK6nOzbITu9M0_3WEu2lx6ocmfGHTSQbf5s4TA-75MDF5gZzdE=w1612-h464-no" width="75%" height="75%" title="Source: https://www.merriam-webster.com/dictionary/anagram"></p>
 
+<br>
 
-This API can be used to find any existing anagrams of a word, given it exists in the database!
+***This API can be used to find any existing anagrams of a word, given it exists in the database!***
 
 <br>
 
