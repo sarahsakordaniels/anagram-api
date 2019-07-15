@@ -5,15 +5,16 @@ An anagram is a word formed by another word by rearranging it's letters. For exa
 ## Setup
 To set this up in your local envinronment...
 
-1.	Run `bundle` to install any gems
+1.	Run `bundle` to install any gems/dependencies.
 
-2. Run `rails db:create`, `rails db:migrate` and `rails db:seed`. Seeding the full dictionary file of over 200,000 words would take quite some time, so I've provided a condensed option in lib/short_dictionary.txt. Searchable words to explore the functionality of the API include "read", "taco", and "cat".
-  + If desired, the full 200,000+ word file is available under full_dictionary.txt. Just change "short_dictionary" in the seed.rb file to "full_dictionary"
+2. Run `rails db:create`, `rails db:migrate` and `rails db:seed`. 
+  +Seeding the full dictionary file of over 200,000 words would take quite some time, so I've provided a condensed option in lib/short_dictionary.txt. Searchable words to explore the functionality of the API include "read", "taco", and "cat".
+  + If desired, the full 200,000+ word file is available under "lib/full_dictionary.txt". Just change "short_dictionary" in the seed.rb file to "full_dictionary"
 
 3. Run `rails s` to boot up the server on localhost:3000.
 
 ## Design
-When deciding on what language/framework to utilize, I decided on Rails for it's wonderful "quick start" magic. Although I appreciate a good learning experience (which this still was), I do appreciate good time management and Rails does a good job of getting my projects up and going so I can spend more brain power on logic rather than setting up the basics.
+When deciding on what language/framework to utilize, I decided on Rails for it's wonderful "quick start" magic. Although I appreciate a quality learning experience (which this definitely still was!), I also value efficient time management. Rails effectively builds the foundation of my projects, allowing me more brain power to spend on logic rather than setting up the basics.
 
 
 I created two models, Anagram and Word. Anagram has the attribute of “key”, a word split into all letters and sorted alphabetically. Any word containing this set of letters is stored under this key. Anagrams have many words, and words belong to anagrams.
@@ -52,4 +53,4 @@ To post and delete, utilize an API development environment/HTTP tool (ex. Postma
 + Endpoint that identifies words with the most anagrams
 
 ## Future Implementations
-Currently, the API only shows exact anagrams for a queried word. For example, when the word "dear" is queried, it will only return four-letter anagrams that contain exactly the letters d, e, a, and r - "read, "dare", and so on. I would like to implement logic that gives all the possible words that could be created from a given set of letters, much like the game Scrabble. So given the word "dear" again, it would return "read" and "dare" along with words like "rad", "red", "ad", etc.
+Currently, the API only shows exact anagrams for a queried word. For example, when the word "dear" is passed as a parameter, the API will only return four-letter anagrams that contain exactly the letters d, e, a, and r - like "read", "dare", and so on. I would like to implement logic that gives all the possible words that could be created from a given set of letters, much like the game Scrabble. So given the word "dear" again, it would return "read" and "dare" along with words like "rad", "red", "ad", etc.
