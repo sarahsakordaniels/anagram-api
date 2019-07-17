@@ -15,14 +15,14 @@ class Word < ApplicationRecord
 
   def self.most_anagrams
     {
-      "words with the most anagrams": @words_with_most_anagrams
+      "words with the most anagrams": @most_anagrams
     }
   end
 
 private
 
   @anagram_id = Word.all.map(&:anagram_id).mode
-  @words_with_most_anagrams = Word.all.where(anagram_id: @anagram_id).pluck(:spelling)
+  @most_anagrams = Word.all.where(anagram_id: @anagram_id).pluck(:spelling)
   @words = Word.all.map(&:spelling)
 
   def self.word_lengths
