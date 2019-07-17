@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_07_09_234958) do
   end
 
   create_table "words", force: :cascade do |t|
-    t.string "spelling"
+    t.string "term"
     t.bigint "anagram_id"
     t.index ["anagram_id"], name: "index_words_on_anagram_id"
   end

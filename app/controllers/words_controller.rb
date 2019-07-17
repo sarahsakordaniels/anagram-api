@@ -4,7 +4,7 @@ class WordsController < ApplicationController
   def create
     params.require(:words).each do |word|
       anagram = Anagram.find_or_create_by(key: word.downcase.split(//).sort.join)
-      anagram.words.create(spelling: word)
+      anagram.words.create(term: word)
     end
     render status: :created
   end
@@ -27,12 +27,12 @@ class WordsController < ApplicationController
 
 #find word in the db
   def word
-    Word.find_by(spelling: params[:spelling])
+    Word.find_by(term: params[:term])
   end
 
 #if queried word does not exist, render 404
   def does_word_exist?
-    if params[:spelling] && word.nil?
+    if params[:term] && word.nil?
       render status: :not_found
     else
       destroy_words
@@ -43,7 +43,7 @@ class WordsController < ApplicationController
 #if param passed for word, delete that word
 #if no word passed, delete all words in db
   def destroy_words
-    if params[:spelling]
+    if params[:term]
       Word.destroy(word.id)
     else
       Word.destroy_all

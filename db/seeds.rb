@@ -7,5 +7,5 @@ Anagram.destroy_all
 File.foreach('./lib/short_dictionary.txt') do |line|
   word = line.strip
   anagram = Anagram.find_or_create_by(key: word.downcase.split(//).sort.join)
-  anagram.words.create(spelling: word)
+  anagram.words.create(term: word)
 end

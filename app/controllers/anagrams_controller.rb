@@ -7,14 +7,14 @@ class AnagramsController < ApplicationController
 
   private
 
-#permits user to pass word spelling and limit parameters
+#permits user to pass word term and limit parameters
   def anagram_params
-    params.permit(:spelling, :limit)
+    params.permit(:term, :limit)
   end
 
-#finds a word in the database by spelling attribute
+#finds a word in the database by term attribute
   def word
-    Word.find_by(spelling: params[:spelling])
+    Word.find_by(term: params[:term])
   end
 
 #if the user passes a limit parameter, return that number of all applicable anagrams. If not, return all applicable anagrams.
@@ -38,7 +38,7 @@ class AnagramsController < ApplicationController
 
 #Returns all anagrams, minus the actual word queried since it is not an anagram of itself
   def all_anagrams
-    anagram_array = word.anagram.words.pluck(:spelling) - [word.spelling]
+    anagram_array = word.anagram.words.pluck(:term) - [word.term]
     if anagram_array == []
       ['This word does not have any anagrams!']
     else

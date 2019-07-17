@@ -1,5 +1,5 @@
 class Word < ApplicationRecord
-  validates :spelling, uniqueness: true
+  validates :term, uniqueness: true
   belongs_to :anagram
 
 
@@ -22,8 +22,8 @@ class Word < ApplicationRecord
 private
 
   @anagram_id = Word.all.map(&:anagram_id).mode
-  @most_anagrams = Word.all.where(anagram_id: @anagram_id).pluck(:spelling)
-  @words = Word.all.map(&:spelling)
+  @most_anagrams = Word.all.where(anagram_id: @anagram_id).pluck(:term)
+  @words = Word.all.map(&:term)
 
   def self.word_lengths
     @words.map do |word|
