@@ -21,7 +21,6 @@ class Word < ApplicationRecord
 
 private
 
-  #find most occurances of a given anagram_id
   @anagram_id = Word.all.map(&:anagram_id).mode
   @words_with_most_anagrams = Word.all.where(anagram_id: @anagram_id).pluck(:spelling)
   @words = Word.all.map(&:spelling)
@@ -37,11 +36,11 @@ private
   end
 
   def self.min_word_length
-    @words.sort.first.length
+    word_lengths.sort.first
   end
 
   def self.max_word_length
-   @words.reverse.first.length
+   word_lengths.sort.last
   end
 
   def self.median_word_length
