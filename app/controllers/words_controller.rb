@@ -1,52 +1,39 @@
 class WordsController < ApplicationController
-
-#POST a new word to the db
+  # POST a new word to the db
   def create
-    params.require(:words).each do |word|
-      anagram = Anagram.find_or_create_by(key: word.downcase.split(//).sort.join)
-      anagram.words.create(term: word)
+    if create_word.new_word
+      render status: :created
+    else
+      render status: :unauthorized
     end
-    render status: :created
   end
 
-  #DELETE a word
+  # DELETE a word
   def destroy
-    does_word_exist?
+    if destroy_word.destroy_words
+      render status: :no_content
+    else
+      render status: :not_found
+    end
   end
 
-  #GET data on words
+  # GET data on words
   def data
     render json: Word.data
   end
 
+  # GET words with most anagrams
   def most_anagrams
     render json: Word.most_anagrams
   end
 
-   private
+    private
 
-#find word in the db
-  def word
-    Word.find_by(term: params[:term])
+  def destroy_word
+    DestroyWord.new(params[:term])
   end
 
-#if queried word does not exist, render 404
-  def does_word_exist?
-    if params[:term] && word.nil?
-      render status: :not_found
-    else
-      destroy_words
-      render status: :no_content
-    end
+  def create_word
+    CreateWord.new(params[:words])
   end
-
-#if param passed for word, delete that word
-#if no word passed, delete all words in db
-  def destroy_words
-    if params[:term]
-      Word.destroy(word.id)
-    else
-      Word.destroy_all
-    end
-  end
- end
+end
