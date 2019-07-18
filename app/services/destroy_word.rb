@@ -13,7 +13,6 @@ class DestroyWord
       Word.destroy(word.id)
     else
       Word.destroy_all
-      
     end
   end
 end
