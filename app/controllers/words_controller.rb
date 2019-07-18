@@ -31,5 +31,9 @@ class WordsController < ApplicationController
 
   def destroy_word
     DestroyWord.new(params[:term])
-    end
   end
+
+  def create_word
+    CreateWord.new(params[:words])
+  end
+end
