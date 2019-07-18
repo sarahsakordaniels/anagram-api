@@ -24,7 +24,6 @@ class FindAnagrams
     end
   end
 
-  # Returns all anagrams, minus the actual word queried since it is not an anagram of itself
   def all_anagrams
     anagram_array = word.anagram.words.pluck(:term) - [word.term]
     if anagram_array == []

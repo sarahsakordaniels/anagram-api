@@ -1,19 +1,21 @@
 class WordsController < ApplicationController
 
   def create
-    if create_word.new_word
-      render status: :created
-    else
-      render status: :unauthorized
+    create_word.new_word
+      if status = 200
+        render json: {
+        message: "Words successfully added to the database."
+      }
     end
   end
 
   # DELETE a word
   def destroy
-    if destroy_word.destroy_words
-      render status: :no_content
-    else
-      render status: :not_found
+    destroy_word.destroy_words
+    if status = 204
+      render json: {
+        message: "Word deletion successful."
+      }
     end
   end
 
