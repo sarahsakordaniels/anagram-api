@@ -1,5 +1,5 @@
 class WordsController < ApplicationController
-  # POST a new word to the db
+
   def create
     if create_word.new_word
       render status: :created
@@ -17,12 +17,10 @@ class WordsController < ApplicationController
     end
   end
 
-  # GET data on words
   def data
     render json: Word.data
   end
 
-  # GET words with most anagrams
   def most_anagrams
     render json: Word.most_anagrams
   end

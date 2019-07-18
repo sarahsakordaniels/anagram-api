@@ -4,12 +4,10 @@ class FindAnagrams
     @limit = limit
   end
 
-  # finds a word in the database by term attribute
   def word
     Word.find_by(term: @term)
   end
 
-  # if the user passes a limit parameter, return that number of all applicable anagrams. If not, return all applicable anagrams.
   def limit_anagrams?
     if @limit
       all_anagrams[0, @limit.to_i]
@@ -18,8 +16,6 @@ class FindAnagrams
     end
   end
 
-  # If a word is found, check if the user passed a limit. If not, that method will return all anagrams.
-  # If the word is not found, return error message
   def anagram_list
     if word
       limit_anagrams?
