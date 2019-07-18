@@ -16,6 +16,7 @@ end
     else
       render status: :not_found
   end
+end
 
   #GET data on words
   def data
@@ -31,5 +32,6 @@ end
 
   def destroy_word
     DestroyWord.new(params[:term])
+    end
+
   end
-end
