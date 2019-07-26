@@ -40,16 +40,6 @@ I created two models, ***anagram*** and ***word***. Anagram has the attribute of
 
   + Example: The word “ibotta” will have the *key* “abiott”. When the word “biota” is added to the database, it would also be stored under the *key* “abiott”.
 
-<br>
-
-
-| Key        | Word         | Word               |
-|------------- |-------------|-------------| 
-| "abiott"      | "ibotta"  | "biota"  |
-| "aekm"      | "make"  | "kame"  |
-| "eervy"    | "every"     | "veery" |
-| "aechprsu" | "purchase"      |   |
-| "adeginrrw" | "rewarding"  | "redrawing" |
 
 
 
@@ -75,8 +65,6 @@ To POST and DELETE, utilize an API development environment/HTTP tool (ex. Postma
 #### ***`POST /words.json`***
 ***
 + Takes a JSON array of English-language words and adds them to the database
-<p align="center">
-<img src="https://lh3.googleusercontent.com/_m75vFcFeLWv7Par3Lfgfl-MUJRVsJO-BQU4dYviywUfzPGrRN0Yy1KDCx6_-e6cZNgTJT75jOWMKJY7p4RhT49lg-rxf19vubTwjkedy7xWLOwEzdGEDKKYWDbQFsJjeygNEXiiTnN0Kw7PMp35Bszz7NTs6owhtcFG4knO2NeI51EZwzTA39Dx2yiDbaToqcvkRWCLgYwHN-0KoY7I-Xs38rg487fe5SjNG58SNHTojkEtLevSeeAoR6g24VTkHxBGGX7uIW9CG7GEUpye6K2s2MvvWjaDDR33_YCAAl5r4SeRf6RQknaPsyR8aeg-eQcw55JhYEvrUIV__J2yr8wR_HuygFKIMlZGiWApRXmEUxynfIiLcNqK-5WsoQaxjRhACDJNviF5OXlun-gzFOkXY2SCUrKYkx1glcG-qJPsEdO6G-h6ob0kuMIMOTMUuux0aO9B1ha3xFSVQxAWEdrVcW7msjR2EH6Qj93rjlXl2-nuxD6WpjoMIze1UCYaYxUXRL_dU9wRblXszqN1_MT0sd_PcZ8zJHrQZNWcZ3ufJd6mhPkSlQZASnI0uzDGlxSJR3dDl2wuyrXVZFTb9EXq5oSNpN7JTljqklsA-AlqgdBbIFddWFNZYhazxRXO-Ij9K6Fm4hDIHmggb4g5_v6xCzTymtY=w2012-h602-no" width="100%" height="100%" title="post example"></p>
 
 
 <br><br>
