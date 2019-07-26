@@ -38,7 +38,7 @@ I created two models, ***anagram*** and ***word***. Anagram has the attribute of
 <p align="center">
 <img src="https://lh3.googleusercontent.com/qNi06Dq4VcHCRROqNsR78phxI1lfAB_KCFxBGh9uSstdkwVeknUaVDIj-9KAnf-CYxFANenQ3osGl1Kg2R-aZojP6O-SznHNmDGZnUlUnMR0_qcRgoAFbRnPUuZK9ZCEonfwCc08mJW7odEgAbJ4mZVEvpkBa9xFfVRt-lzhSVdMmMJi1xLYXMlIfxGGLrgvnrNAbRJV2EU74fdezYk4BW5mQEyKsEA1eQJhUwy-u29uKm8zLqd-mTgKJNQXliKU60-YD5AE9pGKgdMvDs8wBcvDsM43ym0-FdSaA68XL47ZSv5-k0F6LAGcA8qxcOOdSqt6R0mH1npU1SqDWZ-kUITmtQG10FC8QtT92AGhy7CbiCw0-j-U1bI-D3crHQRuwPpBpUPqx1G4YbihWkYMbOsyZv6lMmZzG8mMLSoza9sQ-80Z6eAl8fQuphwIcFL-LNgWiEt0WtaO8R_x0eS4k_V9TOLlzR6BSWwl_1FZY3YhqeqABbyfDkGtST9IOx5BD9vh4SneiGueLc-7fXwbnK2NwzDeHQIKmQJYGn8iVWocUlH1LdCq--pieTpBjx0lHF9esgi-rnRPuYuVXFT6YqKDQ6GPLanCXI3gnQuRz1otkaFIGjEDV3glypuw129u4NCq9He3ax-H09PX9P1LjlOQ0f9LnpQ=w850-h376-no" width="50%" height="50%" title="word model"></p>
 
-  + Example: The word “ibotta” will have the *key* “abiott”. When the word “biota” is added to the database, it would also be stored under the *key* “abiott”.
+  + Example: The word “game” will have the *key* “aegm”. When the word “mega” is added to the database, it would also be stored under the *key* “aegm”.
 
 
 
