@@ -123,11 +123,9 @@ src="https://lh3.googleusercontent.com/JZPd0sUi0wGNAP2OO2wrgC9TweCnUMu5p5KJ6XL9U
 #### ***`GET words/most_anagrams`***
 ***
 + Endpoint that identifies words with the most anagrams
- <p align="center">
-<img src="https://lh3.googleusercontent.com/9jGnDLcZtT10fKhY9P2lwcdA4R3NLtVw0gxEd6nwdZrWQBZGVPhRHrBSva20-_uDXCgmcavEaasELkPDoO9bVzFqisrMMKEWzHpixztlPHkV9my-rvDESbkLSRRDSBR-XC2tZLxb8Us-SdIdqpblkjWBG48WVO0c1JIDdUWNBD7kgcp9Q9KSsScNZglkzu9ShhFXwWHp_-5IV4Uz4jXJ7E2-BPyvIPXacrbTBTcHREoMgyNp7uaa9Q4uV8G6ggS-Qo1XMi2BGcJjJ_f26p20NGX-bcHWkb8NLit1vDZSBj-7T8PhsVdCOcJK-tmldHo5WGGLdB3QN6vbBZe0sXzzbrxTS-Y6v7Tb_m_O5jJsv-KVXtTO2DMlDZOHt1AXwpov8GdbsjR2JpecyFQp8uFuyhkWjkrbPnOeCiAlLWpKljuru8Az3p9aqTi7UCEVgVhs3qNUWzbncc1-jFc45OB1B8fGhoBhgPUOSfz6SusSb9UGA3ZH2gfv8ha71xTjOXHWcwivi4cONGSI7bEjkeo_hhbKa4Es8F776_4y889PXnuWPlSsyVE62EvvqPF-MDIAvCw5MW6UpnjnO_36Hz_JBODScNjkid2r2Q4uwP2vlDvStK2G_iECWUFcrktHPOclxwrEHCc1-ASOot5tfPg-kfpna_q-kYY=w676-h278-no" width="50%" height="50%" title="data example"></p>
+
 
 <br>
-
 
 # Future Implementations
 Currently, the API only shows exact anagrams for a queried word. For example, when the word "dear" is passed as a parameter, the API will only return four-letter anagrams that contain exactly the letters d, e, a, and r - like "read", "dare", and so on. I would like to implement logic that returns all the possible words that could be created from a given set of letters, resembling how one would play Scrabble. So given the word "dear" again, it would return "read" and "dare" along with words like "rad", "red", "ad", etc.
