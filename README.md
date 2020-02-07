@@ -1,4 +1,4 @@
-# Anagram-A-Rama
+# Anagram API
 
 
 
