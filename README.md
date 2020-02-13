@@ -66,14 +66,6 @@ To POST and DELETE, utilize an API development environment/HTTP tool (ex. Postma
 ***
 + Returns a JSON array of English-language words that are anagrams of the word passed as a parameter in the URL.
 <br>
-<p align="center"><i>If the queried word does not have any anagrams in the database...</i></p>
-
-
-<br>
-
-<p align="center"><i>If the queried word does not exist in the database...</i></p>
-
-<br><br>
 
 #### ***`GET /anagrams/:word.json?limit=(number)`:***
 ***
